@@ -11,25 +11,27 @@ const Layout = () => {
         drawerActiveBackgroundColor: colorTokens.dark.gray.gray7,
         drawerActiveTintColor: '#fff',
         drawerLabelStyle: {
-          marginLeft: -20
-        }
+          marginLeft: -20,
+        },
       }}>
       <Drawer.Screen
         name="(home)"
         options={{
           title: 'Home',
-          // headerShown: false,
+          headerShown: false,
           headerTitleAlign: 'center',
-          drawerIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
+          drawerIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} style ={{ marginRight: 15 }}/>,
         }}
       />
       <Drawer.Screen
         name="(favourites)"
         options={{
           title: 'Favourites',
-          // headerShown: false,
+          headerShown: false,
           headerTitleAlign: 'center',
-          drawerIcon: ({ color, size }) => <Ionicons name="heart" size={size} color={color} />,
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="heart" size={size} color={color} style={{ marginRight: 15 }} />
+          ),
         }}
       />
     </Drawer>
