@@ -4,15 +4,16 @@ export const api_key = process.env.EXPO_PUBLIC_TMDB_API_KEY;
 export const baseUrl = 'https://api.themoviedb.org/3/'
 
 export const getTrendingMovies = async (page: number) : Promise<TrendingMovies> => {
-    const response = await fetch(`${baseUrl}trending/all/day?language=en-US&api_key=${api_key}&page=${page}`);
+    const response = await fetch(`${baseUrl}trending/all/day?language=en-US&include_adult=true&api_key=${api_key}&page=${page}`);
     const json = await response.json();
     console.log("🚀 ~ getTrendingMovies ~ json:", json)
     return json;
 }
 
 export const getSearchResults = async ( query: string) : Promise<TrendingMovies> => {
-    const response = await fetch(`${baseUrl}search/multy?language=en-US&api_key=${api_key}&query=${encodeURIComponent(query)}`);
+    const response = await fetch(`${baseUrl}/search/multi?include_adult=true&language=en-US&page=1&api_key=${api_key}&query=${encodeURIComponent(query)}`);
     const result = await response.json();
+    console.log("🚀 ~ getSearchResults ~ result:", result)
     return result;
 }
 

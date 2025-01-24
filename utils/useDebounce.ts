@@ -11,3 +11,5 @@ const useDebounce = (value: string, delay: number) => {
   }, [value, delay]);
   return debouncevalue;
 };
+
+export default useDebounce;
