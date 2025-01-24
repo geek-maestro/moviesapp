@@ -17,7 +17,7 @@ export const getSearchResults = async ( query: string) : Promise<TrendingMovies>
     return result;
 }
 
-export const getMovieDetails = async (movieId: number, type: MediaType) : Promise<any> => {
+export const getMovieDetails = async (movieId: string, type: MediaType) : Promise<any> => {
     const response = await fetch(`${baseUrl}${type}/${movieId}?language=en-US&api_key=${api_key}`);
     const result = await response.json();
     return result;

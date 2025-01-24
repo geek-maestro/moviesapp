@@ -27,6 +27,13 @@ const HomeLayout = () => {
           headerTitleAlign: 'center',
         }}
       />
+      <Stack.Screen
+        name="(tv)/[id]"
+        options={{
+          title: '',
+          headerTitleAlign: 'center',
+        }}
+      />
     </Stack>
   );
 };

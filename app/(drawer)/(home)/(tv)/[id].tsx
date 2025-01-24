@@ -4,12 +4,11 @@ import { useLocalSearchParams } from 'expo-router'
 import Details from '../components/details'
 import { MediaType } from '~/interfaces/movies'
 
-
 const MovieItem = () => {
     const { id } = useLocalSearchParams<{ id: string }>()
     console.log("🚀 ~ MovieItem ~ id:", id)
   return (
-    <Details id={id} mediaType={MediaType.MOVIE} />
+    <Details id={id} mediaType={MediaType.TV} />
   )
 }
 
